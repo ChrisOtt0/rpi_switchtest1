@@ -24,15 +24,15 @@ fn main() {
     let mut input_state = true;
 
     while input_state {
-        out1.toggle();
+        out1.set_high();
+        out2.set_low();
         thread::sleep(Duration::from_millis(y));
 
-        out1.toggle();
-        out2.toggle();
+        out1.set_low();
+        out2.set_high();
         thread::sleep(Duration::from_millis(x));
         input_state = input.is_high();
     }
 
-    out1.set_low();
     out2.set_low();
 }
