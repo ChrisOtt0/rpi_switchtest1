@@ -1,5 +1,4 @@
 use std::{thread, time::Duration};
-
 use rppal::gpio::Gpio;
 
 fn main() {
@@ -31,7 +30,7 @@ fn main() {
         out1.toggle();
         out2.toggle();
         thread::sleep(Duration::from_millis(x));
-        input_state = input.is_low();
+        input_state = input.is_high();
     }
 
     out1.set_low();
